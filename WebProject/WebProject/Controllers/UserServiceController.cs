@@ -41,7 +41,7 @@ namespace WebProject.Controllers
             return View(users);
         }
 
-        // GET: Users/Create
+
         public IActionResult Create()
         {
             return View();
