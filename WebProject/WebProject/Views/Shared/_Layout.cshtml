@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebProject.styles.css" asp-append-version="true" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-[80%] mx-auto text-[18px]">
+        <h1 class="text-[40px] mt-[50px] mb-[100px] text-center">Web Project</h1>
+        <div class="flex">
+            <aside class="mr-[100px] w-[250px]">
+                <nav>
+                    <p class="mb-[20px]">Navigation</p>
+                    <ul>
+                        <a asp-action="PageAction" asp-controller="Home" asp-route-linkClicked="entity">
+                            <li class="mb-[20px] hover:bg-[#A88FAC] hover:text-white px-[10px] py-[10px] cursor-pointer">Link entity</li>
+                        </a>
+
+                        <a asp-action="PageAction" asp-controller="Home" asp-route-linkClicked="service">
+                            <li class="mb-[20px] hover:bg-[#A88FAC] hover:text-white px-[10px] py-[10px] cursor-pointer">Web service</li>
+                        </a>
+                    </ul>
+                </nav>
+            </aside>
+            <main role="main" class="w-full">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - WebProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

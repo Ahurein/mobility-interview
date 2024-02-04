@@ -1,0 +1,15 @@
+﻿@model WebProject.Models.User
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-[40px] mb-[15px]">Delete User</h1>
+
+<div>    
+    <form asp-action="Delete">
+        <input asp-for="Name" class=" border-1 py-[10px] rounded-[10px] px-[10px] w-[500px]" />
+        <input type="submit" value="Delete" class="bg-black text-white px-[20px] py-[5px] rounded-[5px] text-[20px] mt-[20px] block" />
+        <a asp-action="Index" class="block">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿@using WebProject.Models
+
+@model LinkClicked;
+
+@{
+    ViewData["Title"] = "Select an action";
+}
+
+
+@if (Model.ToString().Equals(LinkClicked.Entity.ToString()))
+{
+    <div class="flex gap-x-[50px]">
+        <a asp-action="Create" asp-controller="Users"  class="p-[20px] bg-black text-white rounded-[10px]">Record Add</a>
+        <a asp-action="Delete" asp-controller="Users"  class="p-[20px] bg-[#E9FAE3] text-black rounded-[10px]">Record Delete</a>
+        <a asp-action="Index" asp-controller="Users" class="p-[20px] bg-[#D5C7BC] text-black rounded-[10px]">Record List</a>
+        <a asp-action="Search" asp-controller="Users"  class="p-[20px] bg-[#AC92A6] text-black rounded-[10px]">Record Search</a>
+    </div>
+}
+else
+{
+    <div class="flex gap-x-[50px]">
+        <a asp-action="Create" asp-controller="UserService"  class="p-[20px] bg-black text-white rounded-[10px]">Record Add</a>
+        <a asp-action="Delete" asp-controller="UserService" class="p-[20px] bg-[#E9FAE3] text-black rounded-[10px]">Record Delete</a>
+        <a asp-action="Index" asp-controller="UserService"  class="p-[20px] bg-[#D5C7BC] text-black rounded-[10px]">Record List</a>
+        <a asp-action="Search" asp-controller="UserService" class="p-[20px] bg-[#AC92A6] text-black rounded-[10px]">Record Search</a>
+    </div>
+}
